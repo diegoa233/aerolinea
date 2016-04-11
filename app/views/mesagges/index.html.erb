@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Mesagges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mesagges.each do |mesagge| %>
+      <tr>
+        <td><%= mesagge.message %></td>
+        <td><%= link_to 'Show', mesagge %></td>
+        <td><%= link_to 'Edit', edit_mesagge_path(mesagge) %></td>
+        <td><%= link_to 'Destroy', mesagge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mesagge', new_mesagge_path %>
